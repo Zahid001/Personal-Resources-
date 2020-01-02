@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AllCharts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O84-Fx-HLE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="128"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="ssz-05-vKM">
+                                        <rect key="frame" x="18" y="2" width="378" height="43.5"/>
+                                        <connections>
+                                            <action selector="renderCharts" destination="BYZ-38-t0r" eventType="valueChanged" id="QKV-Ix-sQo"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="IVR-kb-NIe">
+                                        <rect key="frame" x="18" y="52.5" width="378" height="39.5"/>
+                                        <connections>
+                                            <action selector="renderCharts" destination="BYZ-38-t0r" eventType="valueChanged" id="pW9-jc-nHK"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="SLK-tY-Bns">
+                                        <rect key="frame" x="18" y="91" width="378" height="38"/>
+                                        <connections>
+                                            <action selector="renderCharts" destination="BYZ-38-t0r" eventType="valueChanged" id="jse-2L-nku"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ssz-05-vKM" secondAttribute="trailing" constant="20" symbolic="YES" id="0XW-A5-LRA"/>
+                                    <constraint firstAttribute="trailing" secondItem="IVR-kb-NIe" secondAttribute="trailing" constant="20" symbolic="YES" id="5pK-K1-9au"/>
+                                    <constraint firstItem="IVR-kb-NIe" firstAttribute="height" secondItem="O84-Fx-HLE" secondAttribute="height" multiplier="0.3" id="6C8-N5-588"/>
+                                    <constraint firstItem="SLK-tY-Bns" firstAttribute="leading" secondItem="O84-Fx-HLE" secondAttribute="leading" constant="20" symbolic="YES" id="JM1-5P-FPb"/>
+                                    <constraint firstItem="ssz-05-vKM" firstAttribute="top" secondItem="O84-Fx-HLE" secondAttribute="top" constant="2" id="KC6-AC-7x5"/>
+                                    <constraint firstItem="IVR-kb-NIe" firstAttribute="top" secondItem="ssz-05-vKM" secondAttribute="bottom" constant="8" symbolic="YES" id="LSN-a3-IxS"/>
+                                    <constraint firstItem="SLK-tY-Bns" firstAttribute="top" secondItem="IVR-kb-NIe" secondAttribute="bottom" id="Oa1-mJ-0jU"/>
+                                    <constraint firstItem="IVR-kb-NIe" firstAttribute="leading" secondItem="O84-Fx-HLE" secondAttribute="leading" constant="20" symbolic="YES" id="XY3-il-x1j"/>
+                                    <constraint firstItem="ssz-05-vKM" firstAttribute="height" secondItem="O84-Fx-HLE" secondAttribute="height" multiplier="0.3333" id="aFM-sg-Fxd"/>
+                                    <constraint firstItem="ssz-05-vKM" firstAttribute="leading" secondItem="O84-Fx-HLE" secondAttribute="leading" constant="20" symbolic="YES" id="mmr-9v-HPR"/>
+                                    <constraint firstAttribute="trailing" secondItem="SLK-tY-Bns" secondAttribute="trailing" constant="20" symbolic="YES" id="q8x-4T-3ci"/>
+                                    <constraint firstAttribute="bottom" secondItem="SLK-tY-Bns" secondAttribute="bottom" id="ybx-qr-ZqK"/>
+                                </constraints>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xt5-n4-jaC" customClass="BarChartView" customModule="Charts" colorLabel="IBBuiltInLabel-Orange">
+                                <rect key="frame" x="0.0" y="192" width="414" height="134.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES" updatesFrequently="YES"/>
+                                </accessibility>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVs-nC-Ng8" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="346.5" width="414" height="179"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9I-vH-Xtb" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="535.5" width="414" height="326.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="A9I-vH-Xtb" firstAttribute="top" secondItem="kVs-nC-Ng8" secondAttribute="bottom" constant="10" id="3Gv-dz-IZW"/>
+                            <constraint firstItem="kVs-nC-Ng8" firstAttribute="top" secondItem="Xt5-n4-jaC" secondAttribute="bottom" constant="20" id="7mJ-O9-g1x"/>
+                            <constraint firstItem="kVs-nC-Ng8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EL7-hL-Ajo"/>
+                            <constraint firstItem="A9I-vH-Xtb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FBm-ej-TRP"/>
+                            <constraint firstItem="Xt5-n4-jaC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="G5d-Ch-YNb"/>
+                            <constraint firstItem="O84-Fx-HLE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JC1-0r-sGl"/>
+                            <constraint firstItem="Xt5-n4-jaC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KiI-da-VrO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="A9I-vH-Xtb" secondAttribute="bottom" id="RFm-UF-TKW"/>
+                            <constraint firstItem="A9I-vH-Xtb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Rry-gg-aJI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xt5-n4-jaC" secondAttribute="trailing" id="d7f-xh-hQ8"/>
+                            <constraint firstItem="O84-Fx-HLE" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.142857" id="hij-r2-9L9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O84-Fx-HLE" secondAttribute="trailing" id="oPf-BD-nBs"/>
+                            <constraint firstItem="kVs-nC-Ng8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rZ3-vP-WwA"/>
+                            <constraint firstItem="Xt5-n4-jaC" firstAttribute="top" secondItem="O84-Fx-HLE" secondAttribute="bottom" constant="20" id="ttt-dP-Xim"/>
+                            <constraint firstItem="O84-Fx-HLE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x5M-xJ-bU9"/>
+                            <constraint firstItem="kVs-nC-Ng8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="zwo-xs-Nrh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="barChart" destination="Xt5-n4-jaC" id="lVC-TQ-fsW"/>
+                        <outlet property="lineChart" destination="A9I-vH-Xtb" id="rvh-7f-6CP"/>
+                        <outlet property="number1" destination="ssz-05-vKM" id="9lo-MW-Irm"/>
+                        <outlet property="number2" destination="IVR-kb-NIe" id="9h0-Ge-DU0"/>
+                        <outlet property="number3" destination="SLK-tY-Bns" id="eiX-YQ-1Kx"/>
+                        <outlet property="pieChart" destination="kVs-nC-Ng8" id="CIJ-fa-3no"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="98"/>
+        </scene>
+    </scenes>
+</document>
